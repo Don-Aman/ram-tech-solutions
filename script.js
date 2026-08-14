@@ -14,7 +14,7 @@ const io = new IntersectionObserver((entries) => {
   }
 }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal, [data-count]').forEach(el => io.observe(el));
 
 // ---- count-up stats ----
 function countUp(el) {
