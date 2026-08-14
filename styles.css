@@ -107,6 +107,8 @@ section{position:relative;z-index:1}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .marquee__item{font-family:'Sora';font-weight:700;font-size:clamp(1.4rem,3vw,2.3rem);color:var(--cream);opacity:.55;white-space:nowrap;transition:opacity .3s,color .3s}
 .marquee__item:hover{opacity:1;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.marquee__logo{height:clamp(38px,5vw,60px);width:auto;object-fit:contain;opacity:.7;transition:opacity .3s;flex:none}
+.marquee__logo:hover{opacity:1}
 .marquee__dot{color:var(--red-2);font-size:.8rem}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
