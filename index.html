@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RAM Tech Solutions PLC — Engineering the systems that run your business</title>
+<meta name="description" content="RAM Tech Solutions PLC builds enterprise software — ERP, multi-tenant SaaS, and marketplace platforms — engineered for scale, speed, and reliability." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ambient background -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--red" aria-hidden="true"></div>
+
+<!-- scroll progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <img src="assets/logo.png" alt="RAM Tech Solutions logo" />
+    <span>RAM <em>Tech Solutions</em></span>
+  </a>
+  <nav class="nav__links">
+    <a href="#services">Services</a>
+    <a href="#work">Systems</a>
+    <a href="#trusted">Clients</a>
+    <a href="#about">About</a>
+    <a class="nav__cta" href="#contact">Let's talk</a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="hero__badge reveal" data-anim="fade-down">Enterprise software, engineered in Ethiopia 🇪🇹</div>
+    <h1 class="hero__title">
+      <span class="reveal" data-anim="zoom-blur" data-delay="0">We build the</span>
+      <span class="reveal grad-gold" data-anim="zoom-blur" data-delay="120">systems</span>
+      <span class="reveal" data-anim="zoom-blur" data-delay="240">that run your <span class="grad-red">business.</span></span>
+    </h1>
+    <p class="hero__sub reveal" data-anim="fade-up" data-delay="360">
+      RAM Tech Solutions PLC designs and ships production-grade platforms — ERP,
+      multi-tenant SaaS, and commerce marketplaces — built to scale from day one.
+    </p>
+    <div class="hero__actions reveal" data-anim="fade-up" data-delay="480">
+      <a class="btn btn--gold" href="#work">See our systems</a>
+      <a class="btn btn--ghost" href="#contact">Start a project</a>
+    </div>
+    <div class="hero__stats reveal" data-anim="fade-up" data-delay="600">
+      <div><strong data-count="3">0</strong><span>Live platforms</span></div>
+      <div><strong data-count="100" data-suffix="%">0</strong><span>Custom-built</span></div>
+      <div><strong data-count="24" data-suffix="/7">0</strong><span>Uptime focus</span></div>
+    </div>
+  </div>
+  <div class="hero__logo reveal" data-anim="orbit-in">
+    <div class="hero__logo-ring"></div>
+    <div class="hero__logo-ring hero__logo-ring--2"></div>
+    <img src="assets/logo.png" alt="" aria-hidden="true" />
+  </div>
+  <a class="hero__scroll" href="#trusted" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- TRUSTED BY -->
+<section class="trusted" id="trusted">
+  <p class="trusted__label reveal" data-anim="fade-up">Trusted by teams building the future</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <!-- set A -->
+      <span class="marquee__item">Tavola</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">RIBZ</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Sheraton Addis</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Workspace ERP</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Castle Tech</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Aba Group</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Sapphire</span>
+      <span class="marquee__dot">◆</span>
+      <!-- set B (duplicate for seamless loop) -->
+      <span class="marquee__item">Tavola</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">RIBZ</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Sheraton Addis</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Workspace ERP</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Castle Tech</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Aba Group</span>
+      <span class="marquee__dot">◆</span>
+      <span class="marquee__item">Sapphire</span>
+      <span class="marquee__dot">◆</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-head">
+    <p class="eyebrow reveal" data-anim="fade-up">What we do</p>
+    <h2 class="reveal" data-anim="slide-right">Full-stack product engineering</h2>
+    <p class="section-head__sub reveal" data-anim="fade-up" data-delay="120">
+      From the database schema to the pixel — we own the whole build.
+    </p>
+  </div>
+  <div class="services__grid">
+    <article class="scard reveal" data-anim="slide-right" data-delay="0">
+      <div class="scard__icon">◈</div>
+      <h3>ERP &amp; Business Systems</h3>
+      <p>Inventory, warehousing, sales, purchasing, proforma, payroll and finance — unified in one operational backbone.</p>
+    </article>
+    <article class="scard reveal" data-anim="fade-up" data-delay="120">
+      <div class="scard__icon">⬡</div>
+      <h3>Multi-Tenant SaaS</h3>
+      <p>One codebase, many clients. Isolated data, bespoke UI per tenant, and a provider console to run them all.</p>
+    </article>
+    <article class="scard reveal" data-anim="slide-left" data-delay="240">
+      <div class="scard__icon">◉</div>
+      <h3>Marketplaces &amp; Commerce</h3>
+      <p>Carts, checkout, local payment rails (Telebirr / CBE), fulfilment pipelines and automated payouts.</p>
+    </article>
+    <article class="scard reveal" data-anim="slide-right" data-delay="0">
+      <div class="scard__icon">▦</div>
+      <h3>QR &amp; Mobile Experiences</h3>
+      <p>Scan-to-order menus, per-brand theming, and fast mobile-first interfaces your customers actually enjoy.</p>
+    </article>
+    <article class="scard reveal" data-anim="fade-up" data-delay="120">
+      <div class="scard__icon">⟠</div>
+      <h3>Cloud &amp; DevOps</h3>
+      <p>Real-time backends, CI/CD to Vercel &amp; Netlify, and deploys that ship in seconds, not sprints.</p>
+    </article>
+    <article class="scard reveal" data-anim="slide-left" data-delay="240">
+      <div class="scard__icon">✦</div>
+      <h3>Design &amp; Proposals</h3>
+      <p>Brand systems, pitch decks and client-ready proposals — engineered to win the room.</p>
+    </article>
+  </div>
+</section>
+
+<!-- WORK / SYSTEMS WE BUILT -->
+<section class="work" id="work">
+  <div class="section-head">
+    <p class="eyebrow reveal" data-anim="fade-up">Our systems</p>
+    <h2 class="reveal" data-anim="zoom-in">Platforms we built &amp; run</h2>
+    <p class="section-head__sub reveal" data-anim="fade-up" data-delay="120">
+      Not case studies — live products, in production today.
+    </p>
+  </div>
+
+  <article class="project reveal" data-anim="slide-right">
+    <div class="project__media"><span class="project__num">01</span><span class="project__glyph">◈</span></div>
+    <div class="project__body">
+      <p class="project__tag">Enterprise ERP</p>
+      <h3>RAM Workspace ERP</h3>
+      <p>A complete operational backbone: multi-warehouse inventory with stock transfers, sales &amp; purchase management, proforma invoicing with PDF export, expenses, employee payroll and a live finance dashboard — all under role-based access.</p>
+      <ul class="project__chips">
+        <li>Inventory &amp; Warehouses</li><li>Sales / Purchases</li><li>Proforma &amp; PDF</li><li>Payroll</li><li>Finance</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project project--flip reveal" data-anim="slide-left">
+    <div class="project__media project__media--red"><span class="project__num">02</span><span class="project__glyph">⬡</span></div>
+    <div class="project__body">
+      <p class="project__tag">Multi-Tenant SaaS · Brand: Tavola</p>
+      <h3>Tavola — QR Menu Platform</h3>
+      <p>One Next.js + Convex backend serving many restaurants, each reached by its own URL slug. Diners scan a QR to browse; staff edit their menu in a passcode-gated admin; and every client can get a bespoke, hand-coded storefront with per-brand theming.</p>
+      <ul class="project__chips">
+        <li>Multi-tenant</li><li>QR ordering</li><li>Per-brand theming</li><li>Master console</li><li>Real-time</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project reveal" data-anim="slide-right">
+    <div class="project__media"><span class="project__num">03</span><span class="project__glyph">◉</span></div>
+    <div class="project__body">
+      <p class="project__tag">Marketplace · Commerce</p>
+      <h3>RIBZ — Design Marketplace</h3>
+      <p>An apparel marketplace where Ethiopian designers upload artwork, it's printed on garments, and customers buy and pay via Telebirr or CBE. A printer fulfils each order through a print → ship → deliver pipeline, and designers earn an automated payout per sale.</p>
+      <ul class="project__chips">
+        <li>Designer uploads</li><li>Cart &amp; checkout</li><li>Local payments</li><li>Fulfilment pipeline</li><li>Payouts</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- APPROACH / WHY -->
+<section class="why" id="about">
+  <div class="section-head">
+    <p class="eyebrow reveal" data-anim="fade-up">Why RAM</p>
+    <h2 class="reveal" data-anim="slide-right">Built like the ram on our crest</h2>
+  </div>
+  <div class="why__grid">
+    <div class="why__item reveal" data-anim="flip-up" data-delay="0"><strong>Relentless</strong><p>We charge at hard problems head-on and ship what others postpone.</p></div>
+    <div class="why__item reveal" data-anim="flip-up" data-delay="120"><strong>Robust</strong><p>Production-grade from the first commit — auth, roles, and data integrity by default.</p></div>
+    <div class="why__item reveal" data-anim="flip-up" data-delay="240"><strong>Real</strong><p>No slideware. Every system on this page is live and serving real users.</p></div>
+    <div class="why__item reveal" data-anim="flip-up" data-delay="360"><strong>Ready</strong><p>From proposal to production, we move at the speed your business needs.</p></div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta" id="contact">
+  <div class="cta__card reveal" data-anim="zoom-in">
+    <h2>Have a system in mind?</h2>
+    <p>Tell us what you're building. We'll tell you how we'd ship it.</p>
+    <div class="cta__actions">
+      <a class="btn btn--gold" href="mailto:hello@ramtech.solutions">hello@ramtech.solutions</a>
+      <a class="btn btn--ghost" href="tel:+251900000000">+251 900 000 000</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__brand">
+    <img src="assets/logo.png" alt="RAM Tech Solutions" />
+    <span>RAM Tech Solutions PLC</span>
+  </div>
+  <p class="footer__copy">© <span id="year">2026</span> RAM Tech Solutions PLC · Addis Ababa, Ethiopia · Engineering the systems that run your business.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
