@@ -115,6 +115,7 @@ section{position:relative;z-index:1}
 /* ---------- section heads ---------- */
 .section-head{max-width:var(--maxw);margin:0 auto;padding:110px clamp(20px,5vw,52px) 40px;text-align:center}
 .eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.8rem;color:var(--gold-2);margin-bottom:16px}
+.eyebrow--big{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.4rem,3vw,2.2rem);letter-spacing:.12em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-head h2{font-size:clamp(2rem,4.4vw,3.3rem);font-weight:800}
 .section-head__sub{color:var(--muted);margin-top:16px;font-size:1.08rem}
 
