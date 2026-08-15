@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QR Generator | RAM Tech Solutions</title>
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --gold-1:#F0D48A;--gold-2:#D4A03C;--gold-3:#B8862B;
+  --red-2:#A6282A;--red-3:#7E1618;
+  --ink:#0C0A07;--panel:#1B140C;--line:rgba(240,212,138,.16);
+  --cream:#F6EFE2;--muted:#B7A98F;
+  --grad-gold:linear-gradient(135deg,var(--gold-1),var(--gold-2) 55%,var(--gold-3));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--cream);line-height:1.55;min-height:100vh}
+.bg-glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:.4;z-index:0}
+.bg-glow--gold{top:-15%;right:-8%;width:44vw;height:44vw;background:radial-gradient(circle,rgba(212,160,60,.5),transparent 70%)}
+.bg-glow--red{bottom:-18%;left:-12%;width:40vw;height:40vw;background:radial-gradient(circle,rgba(166,40,42,.45),transparent 70%)}
+
+.top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,4vw,40px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Sora';font-weight:700}
+.brand img{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(212,160,60,.4))}
+.brand em{font-style:normal;color:var(--muted);font-weight:500}
+.top a.home{color:var(--muted);font-size:.9rem;text-decoration:none}
+.top a.home:hover{color:var(--gold-1)}
+
+.wrap{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(18px,4vw,40px) 80px}
+.head{text-align:center;margin-bottom:40px}
+.head h1{font-family:'Sora';font-weight:800;font-size:clamp(2rem,5vw,3rem)}
+.head h1 span{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.head p{color:var(--muted);margin-top:10px}
+
+.grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+.card{background:linear-gradient(160deg,rgba(27,20,12,.7),rgba(12,10,7,.5));border:1px solid var(--line);border-radius:20px;padding:26px}
+
+label{display:block;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:18px 0 8px}
+label:first-of-type{margin-top:0}
+input[type=text],input[type=url],select{
+  width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);color:var(--cream);font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
+input:focus,select:focus{border-color:var(--gold-2)}
+select{cursor:pointer;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold-2) 50%),linear-gradient(135deg,var(--gold-2) 50%,transparent 50%);background-position:calc(100% - 20px) 20px,calc(100% - 15px) 20px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.swatch{width:38px;height:38px;border-radius:10px;border:2px solid transparent;cursor:pointer;transition:transform .15s,border-color .2s}
+.swatch:hover{transform:translateY(-2px)}
+.swatch.active{border-color:var(--cream)}
+.color-custom{display:flex;align-items:center;gap:10px;margin-top:12px}
+input[type=color]{width:44px;height:38px;border:1px solid var(--line);border-radius:10px;background:none;cursor:pointer;padding:2px}
+.check{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer;user-select:none}
+.check input{width:18px;height:18px;accent-color:var(--gold-2);cursor:pointer}
+.check span{color:var(--cream);font-size:.95rem}
+.file-btn{margin-top:10px;display:inline-block;font-size:.85rem;color:var(--gold-1);cursor:pointer;text-decoration:underline}
+.file-btn input{display:none}
+
+/* preview panel */
+.preview-card{position:sticky;top:24px;text-align:center}
+.qr-stage{background:#fff;border-radius:18px;padding:22px;display:inline-block;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.qr-stage.transparent{background:repeating-conic-gradient(#2a2118 0% 25%,#1b140c 0% 50%) 50%/22px 22px}
+#preview{display:flex;justify-content:center}
+#preview canvas,#preview svg{max-width:100%;height:auto;border-radius:8px}
+.dl{display:flex;gap:12px;margin-top:22px}
+.btn{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 18px;border-radius:12px;font-weight:600;font-family:inherit;font-size:.95rem;cursor:pointer;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.btn--gold{background:var(--grad-gold);color:#241a06;border:none;box-shadow:0 10px 26px rgba(212,160,60,.3)}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(212,160,60,.45)}
+.btn--ghost{background:rgba(255,255,255,.03);color:var(--cream)}
+.btn--ghost:hover{transform:translateY(-2px);border-color:var(--gold-2);color:var(--gold-1)}
+.hint{color:var(--muted);font-size:.8rem;margin-top:14px}
+
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr}
+  .preview-card{position:static;order:-1}
+}
+</style>
+</head>
+<body>
+<div class="bg-glow bg-glow--gold"></div>
+<div class="bg-glow bg-glow--red"></div>
+
+<header class="top">
+  <a class="brand" href="index.html"><img src="assets/logo.png" alt="RAM"/><span>RAM <em>Tech Solutions</em></span></a>
+  <a class="home" href="index.html">← Back to site</a>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <h1>Branded <span>QR Generator</span></h1>
+    <p>Type a link, style it, download. No sign-ups, no limits, no email walls.</p>
+  </div>
+
+  <div class="grid">
+    <!-- controls -->
+    <section class="card">
+      <label for="data">Link or text</label>
+      <input id="data" type="text" placeholder="https://your-client.com  ·  or any text" value="https://ram-tech-solutions.vercel.app" />
+
+      <label for="fname">File name (client)</label>
+      <input id="fname" type="text" placeholder="solmar-pharmacy" value="ram-qr" />
+
+      <div class="row">
+        <div>
+          <label for="style">Dot style</label>
+          <select id="style">
+            <option value="rounded">Rounded</option>
+            <option value="dots">Dots</option>
+            <option value="classy-rounded">Classy rounded</option>
+            <option value="square">Classic square</option>
+            <option value="extra-rounded">Extra rounded</option>
+          </select>
+        </div>
+        <div>
+          <label for="corner">Corner style</label>
+          <select id="corner">
+            <option value="extra-rounded">Rounded</option>
+            <option value="dot">Dot</option>
+            <option value="square">Square</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Color</label>
+      <div class="swatches" id="swatches">
+        <div class="swatch active" data-type="grad"     style="background:linear-gradient(135deg,#7E1618,#B8862B)" title="Brand gradient"></div>
+        <div class="swatch"        data-type="grad-gold" style="background:linear-gradient(135deg,#F0D48A,#B8862B)" title="Gold gradient"></div>
+        <div class="swatch"        data-solid="#7E1618"  style="background:#7E1618" title="Persian red"></div>
+        <div class="swatch"        data-solid="#B8862B"  style="background:#B8862B" title="Deep gold"></div>
+        <div class="swatch"        data-solid="#111111"  style="background:#111111" title="Black"></div>
+      </div>
+      <div class="color-custom">
+        <input type="color" id="customColor" value="#7E1618" />
+        <span style="color:var(--muted);font-size:.85rem">…or pick a custom color</span>
+      </div>
+
+      <label class="check"><input type="checkbox" id="useLogo" checked /><span>Show RAM logo in the center</span></label>
+      <label class="file-btn">Use a client logo instead
+        <input type="file" id="logoUpload" accept="image/*" />
+      </label>
+
+      <label class="check" style="margin-top:18px"><input type="checkbox" id="transparent" /><span>Transparent background (PNG/SVG)</span></label>
+    </section>
+
+    <!-- preview -->
+    <section class="card preview-card">
+      <div class="qr-stage" id="stage">
+        <div id="preview"></div>
+      </div>
+      <div class="dl">
+        <button class="btn btn--gold" id="dlPng">PNG</button>
+        <button class="btn btn--ghost" id="dlSvg">SVG</button>
+      </div>
+      <p class="hint">Tip: PNG for print &amp; social, SVG for scaling to any size without blur.</p>
+    </section>
+  </div>
+</main>
+
+<script src="assets/vendor/qr-code-styling.js"></script>
+<script src="qr.js"></script>
+</body>
+</html>
