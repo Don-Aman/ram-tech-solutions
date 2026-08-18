@@ -94,6 +94,10 @@ section{position:relative;z-index:1}
 @keyframes float{50%{transform:translateY(-16px)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+.hero__wordmark{margin-top:16px;text-align:center;font-family:'Sora'}
+.hero__wordmark strong{display:block;font-weight:800;font-size:1.3rem;letter-spacing:-.01em}
+.hero__wordmark span{display:block;margin-top:5px;color:var(--muted);font-weight:500;font-size:.95rem}
+
 .hero__scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:2px solid var(--line);border-radius:14px}
 .hero__scroll span{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:var(--gold-1);animation:scrolldot 1.6s ease-in-out infinite}
 @keyframes scrolldot{0%,100%{opacity:0;top:8px}50%{opacity:1;top:20px}}
