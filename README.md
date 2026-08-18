@@ -1,11 +1,11 @@
-# RAM Tech Solutions PLC — Website
+# Omedla Tech Solutions — Website
 
-Static marketing site (HTML/CSS/JS, no build step). Theme: gold + persian red on warm black, from the RAM crest.
+Static marketing site (HTML/CSS/JS, no build step). Theme: blue + cyan on cool navy-black, from the Omedla triquetra mark.
 
 ## Features
 - Unique scroll-reveal animation per section (zoom-blur, orbit-in, slide, flip) via IntersectionObserver — re-triggers on scroll.
 - Horizontal "Trusted by" marquee carousel (pauses on hover).
-- Services + live systems: RAM Workspace ERP, Tavola QR Menu, RIBZ marketplace.
+- Services + live systems: ERP System, Tavola QR Menu, RIBZ marketplace.
 - Fully responsive, `prefers-reduced-motion` respected.
 
 ## Run locally
