@@ -111,8 +111,9 @@ section{position:relative;z-index:1}
 .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .marquee__track{display:flex;align-items:center;gap:44px;width:max-content;animation:marquee 32s linear infinite}
 .marquee:hover .marquee__track{animation-play-state:paused}
-.marquee__item{font-family:'Sora';font-weight:700;font-size:clamp(1.4rem,3vw,2.3rem);color:var(--cream);opacity:.55;white-space:nowrap;transition:opacity .3s,color .3s}
+.marquee__item{font-family:'Sora';font-weight:700;font-size:clamp(1.4rem,3vw,2.3rem);color:var(--cream);opacity:.55;white-space:nowrap;text-decoration:none;transition:opacity .3s,color .3s}
 .marquee__item:hover{opacity:1;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.marquee__logo-link{display:inline-flex;align-items:center;flex:none}
 .marquee__logo{height:clamp(38px,5vw,60px);width:auto;object-fit:contain;opacity:.7;transition:opacity .3s;flex:none}
 .marquee__logo:hover{opacity:1}
 .marquee__dot{color:var(--red-2);font-size:.8rem}
@@ -132,6 +133,8 @@ section{position:relative;z-index:1}
 .scard:hover{transform:translateY(-6px);border-color:rgba(47,134,214,.4)}
 .scard:hover::before{opacity:1}
 .scard__icon{font-size:1.8rem;width:56px;height:56px;display:grid;place-items:center;border-radius:14px;background:rgba(47,134,214,.1);color:var(--gold-1);margin-bottom:20px}
+.scard__img{display:block;width:calc(100% + 56px);height:172px;object-fit:cover;margin:-34px -28px 22px;border-bottom:1px solid var(--line)}
+.scard--photo .scard__icon{position:absolute;top:150px;right:24px;margin:0;width:46px;height:46px;font-size:1.4rem;background:rgba(6,10,23,.8);backdrop-filter:blur(6px);border:1px solid var(--line)}
 .scard h3{font-size:1.28rem;margin-bottom:10px}
 .scard p{color:var(--muted);font-size:.98rem}
 
