@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omedla.vercel.app/sitemap.xml
