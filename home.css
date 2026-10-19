@@ -1,0 +1,102 @@
+/* ============================================================
+   home.css — Safaricom-style homepage layout for Omedla.
+   Loaded ONLY on index.html. All classes namespaced .sf-* so
+   the other pages (styles.css) are untouched. Uses the existing
+   Omedla palette tokens from styles.css (--gold-*, --ink, etc.).
+   Desktop-first; mobile stacking is basic pending final specs.
+   ============================================================ */
+
+/* ---------- hero carousel ---------- */
+.sf-hero{position:relative;z-index:1}
+.sf-hero__viewport{overflow:hidden}
+.sf-hero__track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.sf-slide{min-width:100%;padding:140px clamp(20px,5vw,52px) 72px}
+.sf-slide__inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;min-height:clamp(440px,58vh,560px)}
+.sf-slide__eyebrow{display:inline-block;padding:7px 15px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--gold-1);background:rgba(47,134,214,.07);margin-bottom:22px}
+.sf-slide__title{font-family:'Sora';font-weight:800;font-size:clamp(2.2rem,4.6vw,3.7rem);line-height:1.04;letter-spacing:-.02em;margin-bottom:20px}
+.sf-slide__title .grad{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sf-slide__sub{color:var(--muted);font-size:clamp(1rem,1.5vw,1.18rem);max-width:46ch;margin-bottom:30px}
+.sf-slide__actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* slide media */
+.sf-slide__media{position:relative;aspect-ratio:4/3;border-radius:24px;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 70px rgba(6,10,23,.6)}
+.sf-slide__media img{width:100%;height:100%;object-fit:cover}
+.sf-slide__media--brand{display:grid;place-items:center;background:
+  radial-gradient(120% 120% at 70% 10%,rgba(47,134,214,.35),transparent 60%),
+  linear-gradient(160deg,var(--panel),var(--ink))}
+.sf-slide__media--brand img{width:54%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 50px rgba(47,134,214,.5))}
+
+/* arrows + dots */
+.sf-hero__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:rgba(6,10,23,.55);backdrop-filter:blur(8px);color:var(--cream);font-size:1.3rem;cursor:pointer;transition:border-color .3s,background .3s}
+.sf-hero__arrow:hover{border-color:var(--gold-2);color:var(--gold-1);background:rgba(6,10,23,.8)}
+.sf-hero__arrow--prev{left:clamp(10px,2vw,26px)}
+.sf-hero__arrow--next{right:clamp(10px,2vw,26px)}
+.sf-hero__dots{position:absolute;bottom:26px;left:0;right:0;z-index:4;display:flex;justify-content:center;gap:10px}
+.sf-hero__dot{width:30px;height:5px;border-radius:999px;border:none;background:rgba(147,166,196,.35);cursor:pointer;transition:background .3s,width .3s}
+.sf-hero__dot[aria-current="true"]{background:var(--grad-gold);width:44px}
+
+/* ---------- section scaffold ---------- */
+.sf-sec{max-width:var(--maxw);margin:0 auto;padding:68px clamp(20px,5vw,52px)}
+.sf-sec__head{text-align:center;max-width:70ch;margin:0 auto 42px}
+.sf-sec__eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.78rem;color:var(--gold-2);margin-bottom:14px}
+.sf-sec__title{font-family:'Sora';font-weight:800;font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.08}
+.sf-sec__sub{color:var(--muted);margin-top:14px;font-size:1.06rem}
+
+/* ---------- showcase gallery (video-style tiles) ---------- */
+.sf-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sf-gcard{position:relative;display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;transition:transform .35s,border-color .35s}
+.sf-gcard:hover{transform:translateY(-6px);border-color:rgba(47,134,214,.45)}
+.sf-gcard img{width:100%;height:100%;object-fit:cover}
+.sf-gcard__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,23,.05),rgba(6,10,23,.82));display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.sf-gcard__play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:rgba(47,134,214,.9);box-shadow:0 10px 30px rgba(47,134,214,.5);transition:transform .35s}
+.sf-gcard:hover .sf-gcard__play{transform:translate(-50%,-50%) scale(1.08)}
+.sf-gcard__play::after{content:"";margin-left:4px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
+.sf-gcard__tag{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-1);margin-bottom:6px}
+.sf-gcard__title{font-family:'Sora';font-weight:700;font-size:1.15rem}
+
+/* ---------- featured promo band ---------- */
+.sf-promo{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:
+  radial-gradient(90% 140% at 85% 0%,rgba(47,134,214,.16),transparent 60%),linear-gradient(180deg,rgba(14,22,48,.5),transparent)}
+.sf-promo__inner{max-width:var(--maxw);margin:0 auto;padding:72px clamp(20px,5vw,52px);display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.sf-promo__title{font-family:'Sora';font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:18px}
+.sf-promo__title .grad{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sf-promo__sub{color:var(--muted);font-size:1.08rem;max-width:48ch;margin-bottom:26px}
+.sf-promo__media{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(6,10,23,.6)}
+.sf-promo__media img{width:100%;height:100%;object-fit:cover}
+.sf-promo__stats{display:flex;gap:30px;margin-top:28px}
+.sf-promo__stats strong{display:block;font-family:'Sora';font-weight:800;font-size:1.9rem;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sf-promo__stats span{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* ---------- about (paired image + text columns) ---------- */
+.sf-about{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sf-about__item{display:flex;flex-direction:column}
+.sf-about__media{aspect-ratio:3/2;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px}
+.sf-about__media img{width:100%;height:100%;object-fit:cover}
+.sf-about__item h3{font-size:1.25rem;margin-bottom:10px}
+.sf-about__item p{color:var(--muted);font-size:.98rem}
+
+/* ---------- big dual-button CTA band ---------- */
+.sf-cta{border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(14,22,48,.5))}
+.sf-cta__inner{max-width:var(--maxw);margin:0 auto;padding:72px clamp(20px,5vw,52px);text-align:center}
+.sf-cta__title{font-family:'Sora';font-weight:800;font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:16px}
+.sf-cta__sub{color:var(--muted);font-size:1.1rem;max-width:56ch;margin:0 auto 30px}
+.sf-cta__actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- responsive (basic stacking; final mobile pending) ---------- */
+@media(max-width:900px){
+  .sf-slide{padding-top:120px}
+  .sf-slide__inner{grid-template-columns:1fr;text-align:center;gap:34px}
+  .sf-slide__sub{margin-left:auto;margin-right:auto}
+  .sf-slide__actions{justify-content:center}
+  .sf-slide__media{order:-1;max-width:460px;margin:0 auto;width:100%}
+  .sf-gallery{grid-template-columns:1fr 1fr}
+  .sf-promo__inner{grid-template-columns:1fr;text-align:center}
+  .sf-promo__media{order:-1}
+  .sf-promo__stats{justify-content:center}
+  .sf-about{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .sf-gallery{grid-template-columns:1fr}
+  .sf-hero__arrow{display:none}
+  .sf-slide__media{max-width:none}
+}

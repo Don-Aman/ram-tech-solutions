@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="home.css" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Omedla Tech Solutions","url":"https://omedla.net/","logo":"https://omedla.net/assets/logo.png","description":"Omedla Tech Solutions designs and ships production-grade software: ERP, SaaS, marketplaces and custom platforms for businesses in Ethiopia and beyond.","email":"omedla.technology@gmail.com","telephone":"+251967286383","address":{"@type":"PostalAddress","addressLocality":"Addis Ababa","addressCountry":"ET"},"slogan":"Solutions beyond software"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Omedla Tech Solutions","url":"https://omedla.net/"}</script>
 </head>
@@ -51,41 +52,87 @@
   <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero__inner">
-    <div class="hero__badge reveal" data-anim="fade-down">Enterprise software, engineered in Ethiopia 🇪🇹</div>
-    <h1 class="hero__title">
-      <span class="reveal" data-anim="zoom-blur" data-delay="0">We build the</span>
-      <span class="reveal grad-gold" data-anim="zoom-blur" data-delay="120">systems</span>
-      <span class="reveal" data-anim="zoom-blur" data-delay="240">that run your <span class="grad-red">business.</span></span>
-    </h1>
-    <p class="hero__sub reveal" data-anim="fade-up" data-delay="360">
-      Omedla Tech Solutions designs and ships production grade platforms: ERP,
-      SaaS, and commerce marketplaces built to scale from day one.
-    </p>
-    <div class="hero__actions reveal" data-anim="fade-up" data-delay="480">
-      <a class="btn btn--gold" href="/products">See our systems</a>
-      <a class="btn btn--ghost" href="/contact">Start a project</a>
+<!-- HERO CAROUSEL -->
+<section class="sf-hero" id="top" aria-label="Featured">
+  <div class="sf-hero__viewport" id="sfHero">
+    <div class="sf-hero__track">
+
+      <!-- slide 1 -->
+      <div class="sf-slide">
+        <div class="sf-slide__inner">
+          <div class="sf-slide__text">
+            <span class="sf-slide__eyebrow">Enterprise software, engineered in Ethiopia 🇪🇹</span>
+            <h2 class="sf-slide__title">We build the <span class="grad">systems</span> that run your business.</h2>
+            <p class="sf-slide__sub">Omedla Tech Solutions designs and ships production-grade platforms: ERP, SaaS and commerce, built to scale from day one.</p>
+            <div class="sf-slide__actions">
+              <a class="btn btn--gold" href="/products">See our systems</a>
+              <a class="btn btn--ghost" href="/contact">Start a project</a>
+            </div>
+          </div>
+          <div class="sf-slide__media sf-slide__media--brand">
+            <img src="assets/logo.png" alt="Omedla Tech Solutions" />
+          </div>
+        </div>
+      </div>
+
+      <!-- slide 2 -->
+      <div class="sf-slide">
+        <div class="sf-slide__inner">
+          <div class="sf-slide__text">
+            <span class="sf-slide__eyebrow">Custom Applications</span>
+            <h2 class="sf-slide__title">Software built <span class="grad">around your</span> exact workflow.</h2>
+            <p class="sf-slide__sub">Bespoke desktop, web and mobile apps, from internal tools to customer-facing products, engineered end to end.</p>
+            <div class="sf-slide__actions">
+              <a class="btn btn--gold" href="/solutions">Explore solutions</a>
+              <a class="btn btn--ghost" href="/contact">Talk to us</a>
+            </div>
+          </div>
+          <div class="sf-slide__media"><img src="assets/service-apps.jpg" alt="Custom application development" /></div>
+        </div>
+      </div>
+
+      <!-- slide 3 -->
+      <div class="sf-slide">
+        <div class="sf-slide__inner">
+          <div class="sf-slide__text">
+            <span class="sf-slide__eyebrow">Websites &amp; Design</span>
+            <h2 class="sf-slide__title">Websites that <span class="grad">convert</span>, built to last.</h2>
+            <p class="sf-slide__sub">Fast, responsive marketing sites and web apps, designed and engineered, SEO-ready from the first commit.</p>
+            <div class="sf-slide__actions">
+              <a class="btn btn--gold" href="/solutions">Our web work</a>
+              <a class="btn btn--ghost" href="/contact">Start a project</a>
+            </div>
+          </div>
+          <div class="sf-slide__media"><img src="assets/service-web.jpg" alt="Website development and design" /></div>
+        </div>
+      </div>
+
+      <!-- slide 4 -->
+      <div class="sf-slide">
+        <div class="sf-slide__inner">
+          <div class="sf-slide__text">
+            <span class="sf-slide__eyebrow">Camera Installation</span>
+            <h2 class="sf-slide__title">Secure your premises, <span class="grad">watch from anywhere.</span></h2>
+            <p class="sf-slide__sub">Professional CCTV and IP camera setup: survey, cabling, NVR configuration and remote mobile viewing.</p>
+            <div class="sf-slide__actions">
+              <a class="btn btn--gold" href="/solutions">Learn more</a>
+              <a class="btn btn--ghost" href="/contact">Get a quote</a>
+            </div>
+          </div>
+          <div class="sf-slide__media"><img src="assets/service-camera.jpg" alt="Security camera installation" /></div>
+        </div>
+      </div>
+
     </div>
-    <div class="hero__stats reveal" data-anim="fade-up" data-delay="600">
-      <div><strong data-count="4">0</strong><span>Live platforms</span></div>
-      <div><strong data-count="7">0</strong><span>Custom built</span></div>
-      <div><strong data-count="6">0</strong><span>Uptime focus</span></div>
+    <button class="sf-hero__arrow sf-hero__arrow--prev" aria-label="Previous slide">&#8249;</button>
+    <button class="sf-hero__arrow sf-hero__arrow--next" aria-label="Next slide">&#8250;</button>
+    <div class="sf-hero__dots" role="tablist" aria-label="Slides">
+      <button class="sf-hero__dot" aria-current="true" aria-label="Slide 1"></button>
+      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 2"></button>
+      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 3"></button>
+      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 4"></button>
     </div>
   </div>
-  <div class="hero__logo-wrap reveal" data-anim="orbit-in">
-    <div class="hero__logo">
-      <div class="hero__logo-ring"></div>
-      <div class="hero__logo-ring hero__logo-ring--2"></div>
-      <img src="assets/logo.png" alt="Omedla Tech Solutions" />
-    </div>
-    <div class="hero__wordmark">
-      <strong>Omedla Tech Solutions</strong>
-      <span>Solutions beyond software</span>
-    </div>
-  </div>
-  <a class="hero__scroll" href="#trusted" aria-label="Scroll down"><span></span></a>
 </section>
 
 <!-- TRUSTED BY -->
@@ -147,171 +194,90 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-head">
-    <p class="eyebrow reveal" data-anim="fade-up">What we do</p>
-    <h2 class="reveal" data-anim="slide-right">Full stack product engineering</h2>
-    <p class="section-head__sub reveal" data-anim="fade-up" data-delay="120">
-      From the database schema to the pixel, we own the whole build.
-    </p>
+<!-- SHOWCASE GALLERY -->
+<section class="sf-sec" id="work">
+  <div class="sf-sec__head">
+    <p class="sf-sec__eyebrow">What we build</p>
+    <h2 class="sf-sec__title">See our work in action</h2>
+    <p class="sf-sec__sub">Live products and services, in production today, serving real businesses across Ethiopia.</p>
   </div>
-  <div class="services__grid">
-    <article class="scard reveal" data-anim="slide-right" data-delay="0">
-      <div class="scard__icon">◈</div>
-      <h3>ERP &amp; Business Systems</h3>
-      <p>Inventory, warehousing, sales, purchasing, proforma, payroll and finance, unified in one operational backbone.</p>
-    </article>
-    <article class="scard reveal" data-anim="fade-up" data-delay="120">
-      <div class="scard__icon">⬡</div>
-      <h3>Multi Tenant SaaS</h3>
-      <p>One codebase, many clients. Isolated data, bespoke UI per tenant, and a provider console to run them all.</p>
-    </article>
-    <article class="scard reveal" data-anim="slide-left" data-delay="240">
-      <div class="scard__icon">◉</div>
-      <h3>Marketplaces &amp; Commerce</h3>
-      <p>Carts, checkout, local payment rails, fulfilment pipelines and automated payouts.</p>
-    </article>
-    <article class="scard reveal" data-anim="slide-right" data-delay="0">
-      <div class="scard__icon">▦</div>
-      <h3>QR &amp; Mobile Experiences</h3>
-      <p>Scan to order menus, per brand theming, and fast mobile first interfaces your customers actually enjoy.</p>
-    </article>
-    <article class="scard reveal" data-anim="fade-up" data-delay="120">
-      <div class="scard__icon">⟠</div>
-      <h3>Cloud &amp; DevOps</h3>
-      <p>Real time backends, CI/CD to Vercel &amp; Netlify, and deploys that ship in seconds, not sprints.</p>
-    </article>
-    <article class="scard reveal" data-anim="slide-left" data-delay="240">
-      <div class="scard__icon">✚</div>
-      <h3>Hospital Management System</h3>
-      <p>Patient records, appointments, pharmacy &amp; lab, billing and insurance claims, and ward operations unified in one secure clinical platform.</p>
-    </article>
-    <article class="scard scard--photo reveal" data-anim="slide-right" data-delay="0">
-      <img class="scard__img" src="assets/service-camera.jpg" alt="Security camera installation" loading="lazy" />
-      <div class="scard__icon">▣</div>
-      <h3>Camera Installation</h3>
-      <p>Professional CCTV and IP camera setup: site survey, cabling, NVR configuration and remote mobile viewing, so you can watch your premises from anywhere.</p>
-    </article>
-    <article class="scard scard--photo reveal" data-anim="fade-up" data-delay="120">
-      <img class="scard__img" src="assets/service-apps.jpg" alt="Custom application development" loading="lazy" />
-      <div class="scard__icon">⌘</div>
-      <h3>Custom Applications</h3>
-      <p>Bespoke desktop, web and mobile apps built around your exact workflow, from internal tools to customer facing products.</p>
-    </article>
-    <article class="scard scard--photo reveal" data-anim="slide-left" data-delay="240">
-      <img class="scard__img" src="assets/service-web.jpg" alt="Website development and design" loading="lazy" />
-      <div class="scard__icon">◍</div>
-      <h3>Website Development &amp; Design</h3>
-      <p>Fast, responsive marketing sites and web apps, designed and engineered end to end, SEO ready and built to convert.</p>
-    </article>
+  <div class="sf-gallery">
+    <a class="sf-gcard" href="/solutions">
+      <img src="assets/service-apps.jpg" alt="Custom application development" loading="lazy" />
+      <span class="sf-gcard__play" aria-hidden="true"></span>
+      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Custom software</span><span class="sf-gcard__title">Custom Applications</span></span>
+    </a>
+    <a class="sf-gcard" href="/solutions">
+      <img src="assets/service-web.jpg" alt="Website development and design" loading="lazy" />
+      <span class="sf-gcard__play" aria-hidden="true"></span>
+      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Web</span><span class="sf-gcard__title">Website Development &amp; Design</span></span>
+    </a>
+    <a class="sf-gcard" href="/solutions">
+      <img src="assets/service-camera.jpg" alt="Security camera installation" loading="lazy" />
+      <span class="sf-gcard__play" aria-hidden="true"></span>
+      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Security</span><span class="sf-gcard__title">Camera Installation</span></span>
+    </a>
   </div>
 </section>
 
-<!-- WORK / SYSTEMS WE BUILT -->
-<section class="work" id="work">
-  <div class="section-head">
-    <p class="eyebrow reveal" data-anim="fade-up">Our systems</p>
-    <h2 class="reveal" data-anim="zoom-in">Platforms we built &amp; run</h2>
-    <p class="section-head__sub reveal" data-anim="fade-up" data-delay="120">
-      Not case studies. Live products, in production today.
-    </p>
-  </div>
-
-  <article class="project reveal" data-anim="slide-right">
-    <div class="project__media"><span class="project__num">01</span><span class="project__glyph">◈</span></div>
-    <div class="project__body">
-      <p class="project__tag">Enterprise ERP</p>
-      <h3>ERP System</h3>
-      <p>A complete operational backbone: multi warehouse inventory with stock transfers, sales &amp; purchase management, proforma invoicing with PDF export, expenses, employee payroll and a live finance dashboard, all under role based access.</p>
-      <ul class="project__chips">
-        <li>Inventory &amp; Warehouses</li><li>Sales / Purchases</li><li>Proforma &amp; PDF</li><li>Payroll</li><li>Finance</li>
-      </ul>
+<!-- FEATURED PROMO BAND -->
+<section class="sf-promo">
+  <div class="sf-promo__inner">
+    <div class="sf-promo__text">
+      <h2 class="sf-promo__title">Streamline your operations with <span class="grad">Omedla ERP</span></h2>
+      <p class="sf-promo__sub">Inventory, sales, purchasing, payroll and a live finance dashboard, unified in one operational backbone, so your whole business runs from a single source of truth.</p>
+      <div class="sf-slide__actions">
+        <a class="btn btn--gold" href="/products">Explore the ERP</a>
+        <a class="btn btn--ghost" href="/contact">Request a demo</a>
+      </div>
+      <div class="sf-promo__stats">
+        <div><strong data-count="4">0</strong><span>Live platforms</span></div>
+        <div><strong data-count="7">0</strong><span>Custom built</span></div>
+        <div><strong data-count="100" data-suffix="%">0</strong><span>Uptime focus</span></div>
+      </div>
     </div>
-  </article>
-
-  <article class="project project--flip reveal" data-anim="slide-left">
-    <div class="project__media project__media--red"><span class="project__num">02</span><span class="project__glyph">⬡</span></div>
-    <div class="project__body">
-      <p class="project__tag">Menu · Brand: Tavola</p>
-      <h3>Tavola QR Menu Platform</h3>
-      <p>One Next.js + Convex backend serving many restaurants, each reached by its own URL slug. Diners scan a QR to browse; staff edit their menu in a passcode protected admin; and every client can get a bespoke, custom built storefront with per brand theming.</p>
-      <ul class="project__chips">
-        <li>QR ordering</li><li>Per brand theming</li><li>Master console</li><li>Real time</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project reveal" data-anim="slide-right">
-    <div class="project__media"><span class="project__num">03</span><span class="project__glyph">✚</span></div>
-    <div class="project__body">
-      <p class="project__tag">Pharmacy · Cross Platform App</p>
-      <h3>Pharmacy Management System</h3>
-      <p>A cross platform Flutter app for pharmacies, running on desktop and mobile. Manage inventory and stock, record sales, and act on smart alerts for expiring, expired, out of stock and low quantity items. A visual dashboard turns daily activity into charts, with role based access for admins and pharmacists and full sales and general reports.</p>
-      <ul class="project__chips">
-        <li>Inventory &amp; stock</li><li>Sales &amp; reports</li><li>Expiry alerts</li><li>Low stock alerts</li><li>Dashboard charts</li><li>Roles</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project project--flip reveal" data-anim="slide-left">
-    <div class="project__media project__media--red"><span class="project__num">04</span><span class="project__glyph">✚</span></div>
-    <div class="project__body">
-      <p class="project__tag">Healthcare · Clinical Platform</p>
-      <h3>Hospital Management System</h3>
-      <p>An end to end platform for clinics and hospitals: patient records and visit history, appointment scheduling, pharmacy and lab orders, billing with insurance claims, and ward and bed management, all under role based access for doctors, nurses, pharmacists and admins.</p>
-      <ul class="project__chips">
-        <li>Patient records</li><li>Appointments</li><li>Pharmacy &amp; Lab</li><li>Billing &amp; Claims</li><li>Ward management</li><li>Roles</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project reveal" data-anim="slide-right">
-    <div class="project__media"><span class="project__num">05</span><span class="project__glyph">✂</span></div>
-    <div class="project__body">
-      <p class="project__tag">Barbershop · Booking Platform</p>
-      <h3>Barbershop Management &amp; Booking</h3>
-      <p>An end to end system for barbershops: online appointment booking, barber schedules and queue management, a service catalogue with pricing, client history and reminders, and daily sales reports, all under role based access for owners and barbers.</p>
-      <ul class="project__chips">
-        <li>Online booking</li><li>Barber schedules</li><li>Queue management</li><li>Service catalogue</li><li>Client history</li><li>Sales reports</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project project--flip reveal" data-anim="slide-left">
-    <div class="project__media project__media--red"><span class="project__num">06</span><span class="project__glyph">◒</span></div>
-    <div class="project__body">
-      <p class="project__tag">Dairy · Distribution Platform</p>
-      <h3>Milk Service Management System</h3>
-      <p>A management platform for milk distribution: daily collection and delivery tracking, customer subscriptions and automated billing, supplier records and stock, delivery routes, and payment reconciliation, all under role based access for admins and agents.</p>
-      <ul class="project__chips">
-        <li>Collection &amp; delivery</li><li>Subscriptions</li><li>Automated billing</li><li>Suppliers &amp; stock</li><li>Routes</li><li>Payments</li>
-      </ul>
-    </div>
-  </article>
-</section>
-
-<!-- APPROACH / WHY -->
-<section class="why" id="about">
-  <div class="section-head">
-    <p class="eyebrow eyebrow--big reveal" data-anim="fade-up">Why Omedla</p>
-    <h2 class="reveal" data-anim="slide-right">Solutions beyond software</h2>
-  </div>
-  <div class="why__grid">
-    <div class="why__item reveal" data-anim="flip-up" data-delay="0"><strong>Relentless</strong><p>We charge at hard problems head on and ship what others postpone.</p></div>
-    <div class="why__item reveal" data-anim="flip-up" data-delay="120"><strong>Robust</strong><p>Production grade from the first commit, with auth, roles, and data integrity by default.</p></div>
-    <div class="why__item reveal" data-anim="flip-up" data-delay="240"><strong>Real</strong><p>No slideware. Every system on this page is live and serving real users.</p></div>
-    <div class="why__item reveal" data-anim="flip-up" data-delay="360"><strong>Ready</strong><p>From proposal to production, we move at the speed your business needs.</p></div>
+    <div class="sf-promo__media"><img src="assets/service-apps.jpg" alt="Omedla software across desktop and mobile" loading="lazy" /></div>
   </div>
 </section>
 
-<!-- CTA / CONTACT -->
-<section class="cta" id="contact">
-  <div class="cta__card reveal" data-anim="zoom-in">
-    <h2>Ready to grow your business?</h2>
-    <p>We build systems that streamline your operations and give you one clear view of everything. Move faster, scale seamlessly, and let the workflow run itself.</p>
-    <div class="cta__actions">
-      <a class="btn btn--gold" href="mailto:omedla.technology@gmail.com">omedla.technology@gmail.com</a>
+<!-- ABOUT (paired image + text) -->
+<section class="sf-sec" id="about">
+  <div class="sf-sec__head">
+    <p class="sf-sec__eyebrow">About Omedla</p>
+    <h2 class="sf-sec__title">A purpose-led software company</h2>
+    <p class="sf-sec__sub">We design, build and operate production-grade software for real businesses, proudly based in Addis Ababa, Ethiopia.</p>
+  </div>
+  <div class="sf-about">
+    <div class="sf-about__item">
+      <div class="sf-about__media"><img src="assets/service-web.jpg" alt="Engineering to world standard" loading="lazy" /></div>
+      <h3>Built to world standard</h3>
+      <p>Ethiopian businesses deserve software engineered to the same bar as anything shipping anywhere in the world. That is the bar we build to.</p>
+    </div>
+    <div class="sf-about__item">
+      <div class="sf-about__media"><img src="assets/service-apps.jpg" alt="Live products in production" loading="lazy" /></div>
+      <h3>Live, not slideware</h3>
+      <p>Every platform we present is in production today, serving pharmacies, restaurants, clinics, barbershops and distributors.</p>
+    </div>
+    <div class="sf-about__item">
+      <div class="sf-about__media"><img src="assets/service-camera.jpg" alt="Solutions beyond software" loading="lazy" /></div>
+      <h3>Solutions beyond software</h3>
+      <p>From ERP and custom apps to websites and camera installation, we own the whole build and stay on to run it.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px"><a class="btn btn--ghost" href="/about">More about us</a></div>
+</section>
+
+<!-- BIG CTA BAND -->
+<section class="sf-cta" id="contact">
+  <div class="sf-cta__inner">
+    <h2 class="sf-cta__title">Ready to grow your business?</h2>
+    <p class="sf-cta__sub">We build systems that streamline your operations and give you one clear view of everything. Move faster, scale seamlessly, and let the workflow run itself.</p>
+    <div class="sf-cta__actions">
+      <a class="btn btn--gold" href="/contact">Start a project</a>
+      <a class="btn btn--ghost" href="/products">Explore products</a>
+    </div>
+    <div class="sf-cta__actions" style="margin-top:14px">
+      <a class="btn btn--ghost" href="mailto:omedla.technology@gmail.com">omedla.technology@gmail.com</a>
       <a class="btn btn--ghost" href="tel:+251967286383">+251 967 286 383</a>
     </div>
   </div>
@@ -364,5 +330,23 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function(){
+  var vp=document.getElementById('sfHero'); if(!vp) return;
+  var track=vp.querySelector('.sf-hero__track');
+  var n=track.children.length;
+  var dots=vp.querySelectorAll('.sf-hero__dot');
+  var i=0,timer;
+  function go(k){i=(k+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var d=0;d<dots.length;d++){dots[d].setAttribute('aria-current',d===i?'true':'false');}}
+  function auto(){timer=setInterval(function(){go(i+1);},6000);}
+  function reset(){clearInterval(timer);auto();}
+  vp.querySelector('.sf-hero__arrow--next').addEventListener('click',function(){go(i+1);reset();});
+  vp.querySelector('.sf-hero__arrow--prev').addEventListener('click',function(){go(i-1);reset();});
+  for(var d=0;d<dots.length;d++){(function(k){dots[k].addEventListener('click',function(){go(k);reset();});})(d);}
+  vp.addEventListener('mouseenter',function(){clearInterval(timer);});
+  vp.addEventListener('mouseleave',auto);
+  auto();
+})();
+</script>
 </body>
 </html>
