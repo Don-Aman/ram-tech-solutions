@@ -19,7 +19,7 @@
 .sf-slide__actions{display:flex;gap:14px;flex-wrap:wrap}
 
 /* slide media */
-.sf-slide__media{position:relative;aspect-ratio:4/3;border-radius:24px;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 70px rgba(6,10,23,.6)}
+.sf-slide__media{position:relative;aspect-ratio:4/3;border-radius:24px;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 70px rgba(20,40,80,.16)}
 .sf-slide__media img{width:100%;height:100%;object-fit:cover}
 .sf-slide__media--brand{display:grid;place-items:center;background:
   radial-gradient(120% 120% at 70% 10%,rgba(47,134,214,.35),transparent 60%),
@@ -27,12 +27,12 @@
 .sf-slide__media--brand img{width:54%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 50px rgba(47,134,214,.5))}
 
 /* arrows + dots */
-.sf-hero__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:rgba(6,10,23,.55);backdrop-filter:blur(8px);color:var(--cream);font-size:1.3rem;cursor:pointer;transition:border-color .3s,background .3s}
-.sf-hero__arrow:hover{border-color:var(--gold-2);color:var(--gold-1);background:rgba(6,10,23,.8)}
+.sf-hero__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.78);backdrop-filter:blur(8px);color:var(--cream);font-size:1.3rem;cursor:pointer;transition:border-color .3s,background .3s}
+.sf-hero__arrow:hover{border-color:var(--gold-2);color:var(--gold-1);background:rgba(255,255,255,.92)}
 .sf-hero__arrow--prev{left:clamp(10px,2vw,26px)}
 .sf-hero__arrow--next{right:clamp(10px,2vw,26px)}
 .sf-hero__dots{position:absolute;bottom:26px;left:0;right:0;z-index:4;display:flex;justify-content:center;gap:10px}
-.sf-hero__dot{width:30px;height:5px;border-radius:999px;border:none;background:rgba(147,166,196,.35);cursor:pointer;transition:background .3s,width .3s}
+.sf-hero__dot{width:30px;height:5px;border-radius:999px;border:none;background:rgba(16,42,90,.2);cursor:pointer;transition:background .3s,width .3s}
 .sf-hero__dot[aria-current="true"]{background:var(--grad-gold);width:44px}
 
 /* ---------- section scaffold ---------- */
@@ -56,12 +56,12 @@
 
 /* ---------- featured promo band ---------- */
 .sf-promo{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:
-  radial-gradient(90% 140% at 85% 0%,rgba(47,134,214,.16),transparent 60%),linear-gradient(180deg,rgba(14,22,48,.5),transparent)}
+  radial-gradient(90% 140% at 85% 0%,rgba(47,134,214,.16),transparent 60%),linear-gradient(180deg,rgba(248,250,253,.85),transparent)}
 .sf-promo__inner{max-width:var(--maxw);margin:0 auto;padding:72px clamp(20px,5vw,52px);display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .sf-promo__title{font-family:'Sora';font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:18px}
 .sf-promo__title .grad{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sf-promo__sub{color:var(--muted);font-size:1.08rem;max-width:48ch;margin-bottom:26px}
-.sf-promo__media{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(6,10,23,.6)}
+.sf-promo__media{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,40,80,.16)}
 .sf-promo__media img{width:100%;height:100%;object-fit:cover}
 .sf-promo__stats{display:flex;gap:30px;margin-top:28px}
 .sf-promo__stats strong{display:block;font-family:'Sora';font-weight:800;font-size:1.9rem;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -76,7 +76,7 @@
 .sf-about__item p{color:var(--muted);font-size:.98rem}
 
 /* ---------- big dual-button CTA band ---------- */
-.sf-cta{border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(14,22,48,.5))}
+.sf-cta{border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(248,250,253,.85))}
 .sf-cta__inner{max-width:var(--maxw);margin:0 auto;padding:72px clamp(20px,5vw,52px);text-align:center}
 .sf-cta__title{font-family:'Sora';font-weight:800;font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:16px}
 .sf-cta__sub{color:var(--muted);font-size:1.1rem;max-width:56ch;margin:0 auto 30px}
