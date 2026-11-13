@@ -79,6 +79,12 @@ section{position:relative;z-index:1}
 .nav__cta{padding:9px 20px;border-radius:999px;background:var(--grad-gold);color:#ffffff!important;font-weight:700;opacity:1!important;box-shadow:0 6px 20px rgba(47,134,214,.28)}
 .nav__cta:hover{transform:translateY(-1px)}
 
+/* ---------- nav location pill ---------- */
+.nav__loc{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--cream);opacity:.85;white-space:nowrap;transition:opacity .25s,color .25s,border-color .25s,background .25s}
+.nav__loc:hover{opacity:1;color:var(--gold-1);border-color:var(--gold-2);background:rgba(47,134,214,.08)}
+.nav__loc-dot{width:8px;height:8px;border-radius:50%;background:var(--gold-1);flex:none;box-shadow:0 0 0 0 rgba(95,189,240,.55);animation:locPulse 2.2s ease-out infinite}
+@keyframes locPulse{0%{box-shadow:0 0 0 0 rgba(95,189,240,.55)}70%{box-shadow:0 0 0 7px rgba(95,189,240,0)}100%{box-shadow:0 0 0 0 rgba(95,189,240,0)}}
+
 /* ---------- nav dropdowns ---------- */
 .nav__group{position:relative;display:flex;align-items:center}
 .nav__top{display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;font:inherit;font-weight:500;color:var(--cream);opacity:.82;padding:0;transition:opacity .25s,color .25s}
