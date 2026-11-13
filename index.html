@@ -20,18 +20,27 @@
 <link rel="icon" type="image/png" href="assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="future.css" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Omedla Tech Solutions","url":"https://omedla.net/","logo":"https://omedla.net/assets/logo.png","description":"Omedla Tech Solutions designs and ships production-grade software: ERP, SaaS, marketplaces and custom platforms for businesses in Ethiopia and beyond.","email":"omedla.technology@gmail.com","telephone":"+251967286383","address":{"@type":"PostalAddress","addressLocality":"Addis Ababa","addressCountry":"ET"},"slogan":"Solutions beyond software"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Omedla Tech Solutions","url":"https://omedla.net/"}</script>
 </head>
-<body>
+<body class="fx">
 
-<!-- ambient background -->
-<div class="bg-grid" aria-hidden="true"></div>
-<div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
-<div class="bg-glow bg-glow--red" aria-hidden="true"></div>
+<!-- preloader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__mark">OMEDLA</div>
+  <div class="loader__pct" id="loaderPct">0</div>
+</div>
+
+<!-- WebGL layer -->
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="fx-vignette" aria-hidden="true"></div>
+
+<!-- custom cursor -->
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-ring" id="curRing" aria-hidden="true"></div>
 
 <!-- scroll progress -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -75,95 +84,31 @@
   <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO CAROUSEL -->
-<section class="sf-hero" id="top" aria-label="Featured">
-  <div class="sf-hero__viewport" id="sfHero">
-    <div class="sf-hero__track">
+<main>
 
-      <!-- slide 1 -->
-      <div class="sf-slide">
-        <div class="sf-slide__inner">
-          <div class="sf-slide__text">
-            <span class="sf-slide__eyebrow">Enterprise software, engineered in Ethiopia 🇪🇹</span>
-            <h2 class="sf-slide__title">We build the <span class="grad">systems</span> that run your business.</h2>
-            <p class="sf-slide__sub">Omedla Tech Solutions designs and ships production-grade platforms: ERP, SaaS and commerce, built to scale from day one.</p>
-            <div class="sf-slide__actions">
-              <a class="btn btn--gold" href="/products">See our systems</a>
-              <a class="btn btn--ghost" href="/contact">Start a project</a>
-            </div>
-          </div>
-          <div class="sf-slide__media sf-slide__media--brand">
-            <img src="assets/logo.png" alt="Omedla Tech Solutions" />
-          </div>
-        </div>
-      </div>
-
-      <!-- slide 2 -->
-      <div class="sf-slide">
-        <div class="sf-slide__inner">
-          <div class="sf-slide__text">
-            <span class="sf-slide__eyebrow">Custom Applications</span>
-            <h2 class="sf-slide__title">Software built <span class="grad">around your</span> exact workflow.</h2>
-            <p class="sf-slide__sub">Bespoke desktop, web and mobile apps, from internal tools to customer-facing products, engineered end to end.</p>
-            <div class="sf-slide__actions">
-              <a class="btn btn--gold" href="/solutions">Explore solutions</a>
-              <a class="btn btn--ghost" href="/contact">Talk to us</a>
-            </div>
-          </div>
-          <div class="sf-slide__media sf-slide__media--illus"><img src="assets/illus/apps.svg" alt="Custom application development" /></div>
-        </div>
-      </div>
-
-      <!-- slide 3 -->
-      <div class="sf-slide">
-        <div class="sf-slide__inner">
-          <div class="sf-slide__text">
-            <span class="sf-slide__eyebrow">Websites &amp; Design</span>
-            <h2 class="sf-slide__title">Websites that <span class="grad">convert</span>, built to last.</h2>
-            <p class="sf-slide__sub">Fast, responsive marketing sites and web apps, designed and engineered, SEO-ready from the first commit.</p>
-            <div class="sf-slide__actions">
-              <a class="btn btn--gold" href="/solutions">Our web work</a>
-              <a class="btn btn--ghost" href="/contact">Start a project</a>
-            </div>
-          </div>
-          <div class="sf-slide__media sf-slide__media--illus"><img src="assets/illus/web.svg" alt="Website development and design" /></div>
-        </div>
-      </div>
-
-      <!-- slide 4 -->
-      <div class="sf-slide">
-        <div class="sf-slide__inner">
-          <div class="sf-slide__text">
-            <span class="sf-slide__eyebrow">Camera Installation</span>
-            <h2 class="sf-slide__title">Secure your premises, <span class="grad">watch from anywhere.</span></h2>
-            <p class="sf-slide__sub">Professional CCTV and IP camera setup: survey, cabling, NVR configuration and remote mobile viewing.</p>
-            <div class="sf-slide__actions">
-              <a class="btn btn--gold" href="/solutions">Learn more</a>
-              <a class="btn btn--ghost" href="/contact">Get a quote</a>
-            </div>
-          </div>
-          <div class="sf-slide__media sf-slide__media--illus"><img src="assets/illus/camera.svg" alt="Security camera installation" /></div>
-        </div>
-      </div>
-
-    </div>
-    <button class="sf-hero__arrow sf-hero__arrow--prev" aria-label="Previous slide">&#8249;</button>
-    <button class="sf-hero__arrow sf-hero__arrow--next" aria-label="Next slide">&#8250;</button>
-    <div class="sf-hero__dots" role="tablist" aria-label="Slides">
-      <button class="sf-hero__dot" aria-current="true" aria-label="Slide 1"></button>
-      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 2"></button>
-      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 3"></button>
-      <button class="sf-hero__dot" aria-current="false" aria-label="Slide 4"></button>
-    </div>
+<!-- HERO -->
+<section class="fh" id="top">
+  <div class="fh__hud fh__hud--tl mono" data-rv>EST. ADDIS ABABA — ETHIOPIA</div>
+  <div class="fh__hud fh__hud--tr mono" data-rv>09.03°N · 38.74°E</div>
+  <h1 class="fh__title">
+    <span class="ln"><span class="ln__in">WE BUILD</span></span>
+    <span class="ln"><span class="ln__in">THE <em>SYSTEMS</em></span></span>
+    <span class="ln"><span class="ln__in">THAT RUN</span></span>
+    <span class="ln"><span class="ln__in">YOUR BUSINESS<i>.</i></span></span>
+  </h1>
+  <p class="fh__sub" data-rv>Production-grade ERP, SaaS and custom platforms —<br />engineered to scale from day one.</p>
+  <div class="fh__cta" data-rv>
+    <a class="btn btn--gold" href="/products" data-mag>Explore systems</a>
+    <a class="btn btn--ghost" href="/contact" data-mag>Start a project</a>
   </div>
+  <div class="fh__scroll mono" aria-hidden="true">SCROLL<span class="fh__scroll-line"></span></div>
 </section>
 
-<!-- TRUSTED BY -->
-<section class="trusted" id="trusted">
-  <p class="trusted__label reveal" data-anim="fade-up">TRUSTED BY</p>
+<!-- TRUSTED MARQUEE -->
+<section class="ftrust" id="trusted">
+  <p class="ftrust__label mono" data-rv>TRUSTED BY</p>
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <!-- set A: 3 client group repeated to fill wide screens -->
       <a class="marquee__logo-link" href="https://commercialadvertisingethiopia.com" target="_blank" rel="noopener"><img class="marquee__logo" src="assets/commercial-advertising.png" alt="Commercial Advertising" /></a>
       <span class="marquee__dot">◆</span>
       <span class="marquee__item">Solmar Pharmacy</span>
@@ -172,23 +117,6 @@
       <span class="marquee__dot">◆</span>
       <a class="marquee__item" href="https://abelbarber.amansolution.online" target="_blank" rel="noopener">Abel Barbershop</a>
       <span class="marquee__dot">◆</span>
-      <a class="marquee__logo-link" href="https://commercialadvertisingethiopia.com" target="_blank" rel="noopener"><img class="marquee__logo" src="assets/commercial-advertising.png" alt="Commercial Advertising" /></a>
-      <span class="marquee__dot">◆</span>
-      <span class="marquee__item">Solmar Pharmacy</span>
-      <span class="marquee__dot">◆</span>
-      <span class="marquee__item">Kelebet Pharmacy</span>
-      <span class="marquee__dot">◆</span>
-      <a class="marquee__item" href="https://abelbarber.amansolution.online" target="_blank" rel="noopener">Abel Barbershop</a>
-      <span class="marquee__dot">◆</span>
-      <a class="marquee__logo-link" href="https://commercialadvertisingethiopia.com" target="_blank" rel="noopener"><img class="marquee__logo" src="assets/commercial-advertising.png" alt="Commercial Advertising" /></a>
-      <span class="marquee__dot">◆</span>
-      <span class="marquee__item">Solmar Pharmacy</span>
-      <span class="marquee__dot">◆</span>
-      <span class="marquee__item">Kelebet Pharmacy</span>
-      <span class="marquee__dot">◆</span>
-      <a class="marquee__item" href="https://abelbarber.amansolution.online" target="_blank" rel="noopener">Abel Barbershop</a>
-      <span class="marquee__dot">◆</span>
-      <!-- set B (duplicate for seamless loop) -->
       <a class="marquee__logo-link" href="https://commercialadvertisingethiopia.com" target="_blank" rel="noopener"><img class="marquee__logo" src="assets/commercial-advertising.png" alt="Commercial Advertising" /></a>
       <span class="marquee__dot">◆</span>
       <span class="marquee__item">Solmar Pharmacy</span>
@@ -217,94 +145,115 @@
   </div>
 </section>
 
-<!-- SHOWCASE GALLERY -->
-<section class="sf-sec" id="work">
-  <div class="sf-sec__head">
-    <p class="sf-sec__eyebrow">What we build</p>
-    <h2 class="sf-sec__title">See our work in action</h2>
-    <p class="sf-sec__sub">Live products and services, in production today, serving real businesses across Ethiopia.</p>
+<!-- SYSTEMS -->
+<section class="fsec" id="work">
+  <div class="fsec__head">
+    <p class="mono fsec__kicker" data-rv>[ 01 — SYSTEMS ]</p>
+    <h2 class="fsec__title" data-rv>Live platforms,<br />in production today.</h2>
   </div>
-  <div class="sf-gallery">
-    <a class="sf-gcard" href="/solutions">
-      <img src="assets/illus/apps.svg" alt="Custom application development" loading="lazy" />
-      <span class="sf-gcard__play" aria-hidden="true"></span>
-      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Custom software</span><span class="sf-gcard__title">Custom Applications</span></span>
-    </a>
-    <a class="sf-gcard" href="/solutions">
-      <img src="assets/illus/web.svg" alt="Website development and design" loading="lazy" />
-      <span class="sf-gcard__play" aria-hidden="true"></span>
-      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Web</span><span class="sf-gcard__title">Website Development &amp; Design</span></span>
-    </a>
-    <a class="sf-gcard" href="/solutions">
-      <img src="assets/illus/camera.svg" alt="Security camera installation" loading="lazy" />
-      <span class="sf-gcard__play" aria-hidden="true"></span>
-      <span class="sf-gcard__overlay"><span class="sf-gcard__tag">Security</span><span class="sf-gcard__title">Camera Installation</span></span>
-    </a>
-  </div>
-</section>
+  <div class="fgrid">
 
-<!-- FEATURED PROMO BAND -->
-<section class="sf-promo">
-  <div class="sf-promo__inner">
-    <div class="sf-promo__text">
-      <h2 class="sf-promo__title">Streamline your operations with <span class="grad">Omedla ERP</span></h2>
-      <p class="sf-promo__sub">Inventory, sales, purchasing, payroll and a live finance dashboard, unified in one operational backbone, so your whole business runs from a single source of truth.</p>
-      <div class="sf-slide__actions">
-        <a class="btn btn--gold" href="/products">Explore the ERP</a>
-        <a class="btn btn--ghost" href="/contact">Request a demo</a>
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--chart" aria-hidden="true">
+        <div class="mock__bar" style="--h:46%"></div><div class="mock__bar" style="--h:72%"></div><div class="mock__bar" style="--h:38%"></div><div class="mock__bar" style="--h:88%"></div><div class="mock__bar" style="--h:60%"></div>
       </div>
-      <div class="sf-promo__stats">
-        <div><strong data-count="4">0</strong><span>Live platforms</span></div>
-        <div><strong data-count="7">0</strong><span>Custom built</span></div>
-        <div><strong data-count="100" data-suffix="%">0</strong><span>Uptime focus</span></div>
+      <div class="fcard__meta"><span class="mono">SYS.01</span><span class="mono fcard__arrow">→</span></div>
+      <h3>ERP System</h3>
+      <p>Inventory, sales, payroll and live finance — one operational backbone.</p>
+    </a>
+
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--qr" aria-hidden="true"><div class="mock__qr"></div></div>
+      <div class="fcard__meta"><span class="mono">SYS.02</span><span class="mono fcard__arrow">→</span></div>
+      <h3>Tavola QR Menu</h3>
+      <p>Multi-tenant scan-to-order menus with per-brand storefronts.</p>
+    </a>
+
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--rows" aria-hidden="true">
+        <div class="mock__row"></div><div class="mock__row"></div><div class="mock__row mock__row--alert"></div><div class="mock__row"></div>
       </div>
-    </div>
-    <div class="sf-promo__media sf-promo__media--illus"><img src="assets/illus/erp.svg" alt="Omedla ERP dashboard illustration" loading="lazy" /></div>
+      <div class="fcard__meta"><span class="mono">SYS.03</span><span class="mono fcard__arrow">→</span></div>
+      <h3>Pharmacy Management</h3>
+      <p>Cross-platform stock, sales and smart expiry alerts.</p>
+    </a>
+
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--pulse" aria-hidden="true"><div class="mock__cross"></div><div class="mock__ecg"></div></div>
+      <div class="fcard__meta"><span class="mono">SYS.04</span><span class="mono fcard__arrow">→</span></div>
+      <h3>Hospital Management</h3>
+      <p>Patients, appointments, pharmacy &amp; lab, billing and wards.</p>
+    </a>
+
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--cal" aria-hidden="true">
+        <div class="mock__cell"></div><div class="mock__cell mock__cell--on"></div><div class="mock__cell"></div><div class="mock__cell mock__cell--on"></div><div class="mock__cell"></div><div class="mock__cell"></div><div class="mock__cell mock__cell--on"></div><div class="mock__cell"></div>
+      </div>
+      <div class="fcard__meta"><span class="mono">SYS.05</span><span class="mono fcard__arrow">→</span></div>
+      <h3>Barbershop Booking</h3>
+      <p>Online booking, queues, schedules and daily reports.</p>
+    </a>
+
+    <a class="fcard" href="/products" data-rv data-tilt>
+      <div class="mock mock--wave" aria-hidden="true"><div class="mock__wave"></div></div>
+      <div class="fcard__meta"><span class="mono">SYS.06</span><span class="mono fcard__arrow">→</span></div>
+      <h3>Milk Service Management</h3>
+      <p>Collection, subscriptions, routes and automated billing.</p>
+    </a>
+
   </div>
 </section>
 
-<!-- ABOUT (paired image + text) -->
-<section class="sf-sec" id="about">
-  <div class="sf-sec__head">
-    <p class="sf-sec__eyebrow">About Omedla</p>
-    <h2 class="sf-sec__title">A purpose-led software company</h2>
-    <p class="sf-sec__sub">We design, build and operate production-grade software for real businesses, proudly based in Addis Ababa, Ethiopia.</p>
+<!-- SERVICES INDEX -->
+<section class="fsec" id="services">
+  <div class="fsec__head">
+    <p class="mono fsec__kicker" data-rv>[ 02 — CAPABILITIES ]</p>
+    <h2 class="fsec__title" data-rv>Everything it takes<br />to ship.</h2>
   </div>
-  <div class="sf-about">
-    <div class="sf-about__item">
-      <div class="sf-about__media"><img src="assets/service-web.jpg" alt="Engineering to world standard" loading="lazy" /></div>
-      <h3>Built to world standard</h3>
-      <p>Ethiopian businesses deserve software engineered to the same bar as anything shipping anywhere in the world. That is the bar we build to.</p>
-    </div>
-    <div class="sf-about__item">
-      <div class="sf-about__media"><img src="assets/service-apps.jpg" alt="Live products in production" loading="lazy" /></div>
-      <h3>Live, not slideware</h3>
-      <p>Every platform we present is in production today, serving pharmacies, restaurants, clinics, barbershops and distributors.</p>
-    </div>
-    <div class="sf-about__item">
-      <div class="sf-about__media"><img src="assets/service-camera.jpg" alt="Solutions beyond software" loading="lazy" /></div>
-      <h3>Solutions beyond software</h3>
-      <p>From ERP and custom apps to websites and camera installation, we own the whole build and stay on to run it.</p>
-    </div>
+  <div class="findex" data-rv>
+    <a class="findex__row" href="/solutions"><span class="mono">01</span><strong>ERP &amp; Business Systems</strong><em>operational backbones</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">02</span><strong>Multi-Tenant SaaS</strong><em>one codebase, many clients</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">03</span><strong>Marketplaces &amp; Commerce</strong><em>carts to payouts</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">04</span><strong>QR &amp; Mobile Experiences</strong><em>mobile-first interfaces</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">05</span><strong>Cloud &amp; DevOps</strong><em>deploys in seconds</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">06</span><strong>Hospital Management</strong><em>secure clinical platforms</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">07</span><strong>Camera Installation</strong><em>CCTV &amp; remote viewing</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">08</span><strong>Custom Applications</strong><em>built around your workflow</em><span class="mono findex__go">→</span></a>
+    <a class="findex__row" href="/solutions"><span class="mono">09</span><strong>Websites &amp; Design</strong><em>SEO-ready, built to convert</em><span class="mono findex__go">→</span></a>
   </div>
-  <div style="text-align:center;margin-top:36px"><a class="btn btn--ghost" href="/about">More about us</a></div>
 </section>
 
-<!-- BIG CTA BAND -->
-<section class="sf-cta" id="contact">
-  <div class="sf-cta__inner">
-    <h2 class="sf-cta__title">Ready to grow your business?</h2>
-    <p class="sf-cta__sub">We build systems that streamline your operations and give you one clear view of everything. Move faster, scale seamlessly, and let the workflow run itself.</p>
-    <div class="sf-cta__actions">
-      <a class="btn btn--gold" href="/contact">Start a project</a>
-      <a class="btn btn--ghost" href="/products">Explore products</a>
-    </div>
-    <div class="sf-cta__actions" style="margin-top:14px">
-      <a class="btn btn--ghost" href="mailto:omedla.technology@gmail.com">omedla.technology@gmail.com</a>
-      <a class="btn btn--ghost" href="tel:+251967286383">+251 967 286 383</a>
-    </div>
-  </div>
+<!-- STATS -->
+<section class="fstats" data-rv>
+  <div><strong data-count="4">0</strong><span class="mono">LIVE PLATFORMS</span></div>
+  <div class="fstats__sep" aria-hidden="true"></div>
+  <div><strong data-count="7">0</strong><span class="mono">CUSTOM BUILT</span></div>
+  <div class="fstats__sep" aria-hidden="true"></div>
+  <div><strong data-count="100" data-suffix="%">0</strong><span class="mono">UPTIME FOCUS</span></div>
 </section>
+
+<!-- MANIFESTO -->
+<section class="fmani" id="about">
+  <p class="mono fsec__kicker" data-rv>[ 03 — WHY OMEDLA ]</p>
+  <p class="fmani__text" id="mani">We design, build and run production software for real businesses — from Addis Ababa to anywhere. No slideware. No shortcuts. Every system on this site is live, serving real users, engineered to outlast the hype.</p>
+  <a class="btn btn--ghost" href="/about" data-mag data-rv>More about us</a>
+</section>
+
+<!-- CTA -->
+<section class="fcta" id="contact">
+  <p class="mono fsec__kicker" data-rv>[ 04 — CONTACT ]</p>
+  <h2 class="fcta__title">
+    <span class="ln"><span class="ln__in">LET'S BUILD</span></span>
+    <span class="ln"><span class="ln__in">WHAT'S <em>NEXT.</em></span></span>
+  </h2>
+  <div class="fcta__actions" data-rv>
+    <a class="btn btn--gold" href="/contact" data-mag>Start a project</a>
+    <a class="btn btn--ghost" href="mailto:omedla.technology@gmail.com" data-mag>omedla.technology@gmail.com</a>
+  </div>
+  <p class="fcta__tel mono" data-rv>+251 967 286 383 · +251 994 200 033 · +251 973 862 326</p>
+</section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -348,28 +297,12 @@
   </div>
   <div class="site-footer__bottom">
     <p class="footer__copy">© <span id="year">2026</span> Omedla Tech Solutions · Addis Ababa, Ethiopia</p>
-    <p class="footer__legal">Solutions beyond software.</p>
+    <p class="footer__legal mono">SOLUTIONS BEYOND SOFTWARE</p>
   </div>
 </footer>
 
 <script src="script.js"></script>
-<script>
-(function(){
-  var vp=document.getElementById('sfHero'); if(!vp) return;
-  var track=vp.querySelector('.sf-hero__track');
-  var n=track.children.length;
-  var dots=vp.querySelectorAll('.sf-hero__dot');
-  var i=0,timer;
-  function go(k){i=(k+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var d=0;d<dots.length;d++){dots[d].setAttribute('aria-current',d===i?'true':'false');}}
-  function auto(){timer=setInterval(function(){go(i+1);},6000);}
-  function reset(){clearInterval(timer);auto();}
-  vp.querySelector('.sf-hero__arrow--next').addEventListener('click',function(){go(i+1);reset();});
-  vp.querySelector('.sf-hero__arrow--prev').addEventListener('click',function(){go(i-1);reset();});
-  for(var d=0;d<dots.length;d++){(function(k){dots[k].addEventListener('click',function(){go(k);reset();});})(d);}
-  vp.addEventListener('mouseenter',function(){clearInterval(timer);});
-  vp.addEventListener('mouseleave',auto);
-  auto();
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js" defer></script>
+<script src="future.js" defer></script>
 </body>
 </html>
