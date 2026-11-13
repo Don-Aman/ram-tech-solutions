@@ -59,3 +59,28 @@ document.querySelectorAll('.scard').forEach(card => {
 
 // ---- year ----
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- site-wide scroll reveal (auto-tagged, one-shot) ----
+const rvIO = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) { e.target.classList.add('in'); rvIO.unobserve(e.target); }
+  }
+}, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+const rvSel = [
+  '.scard', '.post', '.ptier', '.step', '.project', '.why__item',
+  '.sf-gcard', '.sf-about__item', '.sf-sec__head', '.sf-promo__text', '.sf-promo__media', '.sf-cta__inner',
+  '.phero .crumbs', '.phero h1', '.phero__sub',
+  '.sec > h2', '.sec > .sec__eyebrow', '.sec > .sec__lead', '.sec > .prose',
+  '.contact-form', '.contact-info', '.cta__card', '.trusted__label'
+].join(',');
+
+const rvGroups = new Map();
+document.querySelectorAll(rvSel).forEach(el => {
+  if (el.classList.contains('reveal') || el.closest('.sf-hero')) return;
+  const i = rvGroups.get(el.parentElement) || 0;
+  rvGroups.set(el.parentElement, i + 1);
+  el.classList.add('rv');
+  el.style.setProperty('--rvd', Math.min(i * 90, 450) + 'ms');
+  rvIO.observe(el);
+});

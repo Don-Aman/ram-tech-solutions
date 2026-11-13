@@ -19,8 +19,18 @@
 .sf-slide__actions{display:flex;gap:14px;flex-wrap:wrap}
 
 /* slide media */
-.sf-slide__media{position:relative;aspect-ratio:4/3;border-radius:24px;border:1px solid var(--line);overflow:hidden;box-shadow:0 30px 70px rgba(20,40,80,.16)}
+.sf-slide__media{position:relative;aspect-ratio:16/10;border-radius:24px;border:1px solid var(--line);overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(20,40,80,.16)}
 .sf-slide__media img{width:100%;height:100%;object-fit:cover}
+.sf-slide__media--illus img{object-fit:cover}
+
+/* hero entrance (first paint) */
+@keyframes sfUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.sf-slide__eyebrow{animation:sfUp .7s cubic-bezier(.16,1,.3,1) both}
+.sf-slide__title{animation:sfUp .7s .08s cubic-bezier(.16,1,.3,1) both}
+.sf-slide__sub{animation:sfUp .7s .16s cubic-bezier(.16,1,.3,1) both}
+.sf-slide__actions{animation:sfUp .7s .24s cubic-bezier(.16,1,.3,1) both}
+.sf-slide__media{animation:sfUp .9s .15s cubic-bezier(.16,1,.3,1) both}
+@media(prefers-reduced-motion:reduce){.sf-slide__eyebrow,.sf-slide__title,.sf-slide__sub,.sf-slide__actions,.sf-slide__media{animation:none}}
 .sf-slide__media--brand{display:grid;place-items:center;background:
   radial-gradient(120% 120% at 70% 10%,rgba(47,134,214,.35),transparent 60%),
   linear-gradient(160deg,var(--panel),var(--ink))}
@@ -46,8 +56,9 @@
 .sf-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .sf-gcard{position:relative;display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;transition:transform .35s,border-color .35s}
 .sf-gcard:hover{transform:translateY(-6px);border-color:rgba(47,134,214,.45)}
-.sf-gcard img{width:100%;height:100%;object-fit:cover}
-.sf-gcard__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,23,.05),rgba(6,10,23,.82));display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.sf-gcard img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.sf-gcard:hover img{transform:scale(1.05)}
+.sf-gcard__overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(255,255,255,.94) 82%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
 .sf-gcard__play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:rgba(47,134,214,.9);box-shadow:0 10px 30px rgba(47,134,214,.5);transition:transform .35s}
 .sf-gcard:hover .sf-gcard__play{transform:translate(-50%,-50%) scale(1.08)}
 .sf-gcard__play::after{content:"";margin-left:4px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
@@ -61,7 +72,7 @@
 .sf-promo__title{font-family:'Sora';font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.01em;margin-bottom:18px}
 .sf-promo__title .grad{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sf-promo__sub{color:var(--muted);font-size:1.08rem;max-width:48ch;margin-bottom:26px}
-.sf-promo__media{position:relative;aspect-ratio:16/11;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,40,80,.16)}
+.sf-promo__media{position:relative;aspect-ratio:16/10;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 30px 70px rgba(20,40,80,.16)}
 .sf-promo__media img{width:100%;height:100%;object-fit:cover}
 .sf-promo__stats{display:flex;gap:30px;margin-top:28px}
 .sf-promo__stats strong{display:block;font-family:'Sora';font-weight:800;font-size:1.9rem;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -71,7 +82,8 @@
 .sf-about{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .sf-about__item{display:flex;flex-direction:column}
 .sf-about__media{aspect-ratio:3/2;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px}
-.sf-about__media img{width:100%;height:100%;object-fit:cover}
+.sf-about__media img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.sf-about__item:hover .sf-about__media img{transform:scale(1.05)}
 .sf-about__item h3{font-size:1.25rem;margin-bottom:10px}
 .sf-about__item p{color:var(--muted);font-size:.98rem}
 
