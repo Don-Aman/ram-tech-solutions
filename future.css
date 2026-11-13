@@ -15,6 +15,7 @@
 
 /* ---------- WebGL + atmosphere ---------- */
 #gl{position:fixed;inset:0;z-index:0;pointer-events:none}
+.site-footer{position:relative;z-index:1}
 .fx-vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:
   radial-gradient(120% 90% at 50% 0%,transparent 55%,rgba(3,5,12,.55) 100%),
   radial-gradient(90% 70% at 50% 110%,rgba(27,75,158,.14),transparent 60%)}
